@@ -1,0 +1,27 @@
+
+.chat-container {
+  height: 75%;
+  margin: 2rem;
+
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #646464 #cccabf;
+}
+
+.chat-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background-color: #646464;
+}
+
+.chat-container::-webkit-scrollbar-track {
+  background-color: #cccabf;
+}
+
+@media (min-width: 768px) {
+  .chat-container {
+    height: 80%;
+  }
+}
