@@ -1,3 +1,8 @@
-<div class="bubble">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, eos ipsam necessitatibus nobis placeat praesentium velit?</p>
+<div
+  [ngClass]="index % 2 == 0 ? 'b-right' : 'b-left'">
+  <div class="bubble"
+       [ngClass]="index % 2 == 0 ? 'bg-blue' : 'bg-gray'"
+       *ngIf="message">
+    <pre>{{ message }}</pre>
+  </div>
 </div>

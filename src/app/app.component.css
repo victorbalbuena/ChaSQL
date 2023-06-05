@@ -6,6 +6,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background: linear-gradient(45deg,transparent 14%, #e7e5e5 15%, #e7e5e5 20%, transparent 21%, transparent 79%, #e7e5e5  80%, #e7e5e5 85%, transparent 86%),linear-gradient(135deg,transparent 14%, #e7e5e5 15%, #e7e5e5 20%, transparent 21%, transparent 79%, #e7e5e5  80%, #e7e5e5 85%, transparent 86%), radial-gradient(transparent 14%, #e7e5e5 15%, #e7e5e5 25%, transparent 26%);
+  background-size: 7em 7em;
+  background-color: #f5f5f5;
+  opacity: 1;
 }
 
 .info {
@@ -18,6 +23,7 @@
 
 .panel {
   width: 90%;
+  max-width: 90%;
   height: 95%;
   margin: 2rem;
   background-color: rgba(255, 255, 255);
@@ -27,13 +33,13 @@
 
 @media (min-width: 1024px) {
   .panel {
-    max-width: 60%;
+    max-width: 50%;
   }
 }
 
 @media (min-width: 2000px) {
   .panel {
-    max-width: 50%;
+    max-width: 40%;
   }
 }
 
@@ -104,6 +110,23 @@
   min-width: 20%;
   margin: 0;
   height: 4.4rem;
+  background-color: #dfdfe0;
+
+  transition: all .3s ease-out;
+}
+
+.btn-send:hover {
+  background-color: #43a3b6;
+  color: #FFFFFF;
+}
+
+.btn-send:disabled {
+  color: #000000;
+  background-color: #dfdfe0;
+}
+
+.btn-send:disabled:hover {
+  cursor: inherit;
 }
 
 @media (min-width: 768px) {
@@ -130,3 +153,23 @@
   }
 }
 
+/* Input */
+
+.input-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  height: 4.4rem;
+}
+
+.input-container input {
+  width: 100%;
+  min-width: 100%;
+  border: solid rgba(0, 0, 0, 0.16) 1px;
+  box-sizing: border-box;
+  border-radius: 10px 0 0 10px;
+  padding: 1rem 1rem;
+  font-size: 1.6rem;
+  height: 4.4rem;
+  font-family: var(--firstFont);
+}

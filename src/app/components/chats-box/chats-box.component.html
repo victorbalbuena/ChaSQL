@@ -1,5 +1,6 @@
 <div class="chat-container">
-  <app-message-bubble></app-message-bubble>
-  <app-message-bubble></app-message-bubble>
-  <app-message-bubble></app-message-bubble>
+  <ng-container *ngFor="let message of allRequestAndResponse; let index = index">
+    <app-message-bubble [message]="message" [index]="index"></app-message-bubble>
+  </ng-container>
+  <app-writing-bubble *ngIf="isLoading"></app-writing-bubble>
 </div>

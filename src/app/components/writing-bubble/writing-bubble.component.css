@@ -1,0 +1,59 @@
+.bubble {
+  max-width: 4rem;
+  padding: 2rem 4rem;
+  border-radius: 1rem;
+  background-color: #e1e1e1;
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  min-width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border: 1px solid #a1a1a1;
+  margin-right: .5rem;
+  border-radius: 50%;
+  position: relative;
+}
+
+.dot1,
+.dot3 {
+  animation-duration: 2s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+}
+
+.dot2 {
+  animation-duration: 2s;
+  animation-name: slidein-reverse;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slidein {
+  0% {
+    bottom: -5px;
+  }
+
+  50% {
+    bottom: 10px;
+  }
+
+  100% {
+    bottom: -5px;
+  }
+}
+
+@keyframes slidein-reverse {
+  0% {
+    bottom: 10px;
+  }
+
+  50% {
+    bottom: -5px;
+  }
+
+  100% {
+    bottom: 10px;
+  }
+}

@@ -4,6 +4,8 @@ import { MessageBubbleComponent } from './message-bubble/message-bubble.componen
 import { DisplayComponent } from './display/display.component';
 import { ChatsBoxComponent } from './chats-box/chats-box.component';
 import { InputComponent } from './input/input.component';
+import { WritingBubbleComponent } from './writing-bubble/writing-bubble.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -12,16 +14,19 @@ import { InputComponent } from './input/input.component';
     MessageBubbleComponent,
     DisplayComponent,
     ChatsBoxComponent,
-    InputComponent
+    InputComponent,
+    WritingBubbleComponent
   ],
   exports: [
     MessageBubbleComponent,
     DisplayComponent,
     ChatsBoxComponent,
-    InputComponent
+    InputComponent,
+    WritingBubbleComponent
   ],
-  imports: [
-    CommonModule
-  ]
+    imports: [
+        CommonModule,
+        ReactiveFormsModule
+    ]
 })
 export class ComponentsModule { }

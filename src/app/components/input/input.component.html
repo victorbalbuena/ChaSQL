@@ -1,3 +1,5 @@
-<div class="input-container">
-  <input type="text" placeholder="Ej: Crea una tabla llamada Escuela">
+<div class="input-container" [formGroup]="myForm" *ngIf="myForm">
+  <input formControlName="text"
+         type="text" placeholder="Ej: Crea una tabla llamada ..."
+  >
 </div>

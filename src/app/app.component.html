@@ -8,14 +8,27 @@
         <div class="name">Chat SQL</div>
       </div>
       <div class="delete">
-        <i class="fa-sharp fa-solid fa-trash"></i>
+<!--        <i class="fa-sharp fa-solid fa-trash"></i>-->
       </div>
     </div>
-    <app-chats-box></app-chats-box>
-<!--    <app-display></app-display>-->
+    <app-chats-box [isLoading]="isLoading"
+                   [allRequestAndResponse]="allRequestAndResponse"
+    >
+    </app-chats-box>
     <div class="input-message">
-      <app-input class="app-input"></app-input>
-      <button class="btn-send">
+      <app-input [myForm]="myForm"
+                 class="app-input"
+      ></app-input>
+
+<!--      <div class="app-input">-->
+<!--        <div class="input-container" *ngIf="myForm">-->
+<!--          <input formControlName="text"-->
+<!--                 type="text" placeholder="Ej: Crea una tabla llamada ..."-->
+<!--          >-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <button class="btn-send" (click)="sendRequest()">
         <i class="fa-solid fa-paper-plane"></i>
       </button>
     </div>
