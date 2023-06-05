@@ -11,7 +11,7 @@
 .bubble {
   overflow: auto;
   max-width: 80%;
-  padding: 1.4rem 2rem;
+  padding: 1.4rem 1.4rem;
   margin: 0 1rem 1rem 0;
 
   animation-duration: 0.4s;

@@ -4,7 +4,7 @@ import { SubSink } from 'subsink';
 import { map } from 'rxjs';
 import { Structure } from '../_core/_models/structure';
 import { MessagesRequest } from '../_core/_models/messages-request';
-import { FormControl, FormGroup } from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -20,12 +20,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
   allRequestAndResponse?: string[] = [];
 
-  isLoading?: boolean = false;
+  isLoading: boolean = false;
 
   varEmpty = '';
 
   myForm = new FormGroup({
-    text: new FormControl('')
+    text: new FormControl('', Validators.required)
   });
 
   constructor(private openaiHttp: OpenaiService) {
@@ -38,6 +38,8 @@ export class AppComponent implements OnInit, OnDestroy {
   sendRequest() {
     this.isLoading = true;
     this.request.text = this.text?.value;
+    this.myForm.controls['text'].disable();
+    this.myForm.controls['text'].setValue('');
     // @ts-ignore
     this.allRequestAndResponse.push(this.request?.text);
     this.subSink.add(
@@ -47,16 +49,18 @@ export class AppComponent implements OnInit, OnDestroy {
             console.log(response);
 
             // @ts-ignore
-            this.message = response.text?.slice(2);
+            this.message = response.text?.slice(1);
             // @ts-ignore
             this.allRequestAndResponse.push(this.message);
 
             console.log(this.allRequestAndResponse);
             this.isLoading = false;
+            this.myForm.controls['text'].enable();
           })
         )
         .subscribe(() => {}, error => {
           this.isLoading = false;
+          this.myForm.controls['text'].enable();
         })
     );
   }

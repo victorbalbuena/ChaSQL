@@ -16,19 +16,17 @@
     >
     </app-chats-box>
     <div class="input-message">
-      <app-input [myForm]="myForm"
-                 class="app-input"
-      ></app-input>
 
-<!--      <div class="app-input">-->
-<!--        <div class="input-container" *ngIf="myForm">-->
-<!--          <input formControlName="text"-->
-<!--                 type="text" placeholder="Ej: Crea una tabla llamada ..."-->
-<!--          >-->
-<!--        </div>-->
-<!--      </div>-->
+      <div class="app-input">
+        <div class="input-container" [formGroup]="myForm" *ngIf="myForm">
+          <input formControlName="text"
+                 (keyup.enter)="sendRequest()"
+                 type="text" placeholder="Ej: Crea una tabla llamada ..."
+          >
+        </div>
+      </div>
 
-      <button class="btn-send" (click)="sendRequest()">
+      <button class="btn-send" (click)="sendRequest()" [disabled]="isLoading || !text?.valid">
         <i class="fa-solid fa-paper-plane"></i>
       </button>
     </div>
