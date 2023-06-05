@@ -1,6 +1,10 @@
-<div class="chat-container">
+<div class="chat-container" *ngIf="allRequestAndResponse?.length">
   <ng-container *ngFor="let message of allRequestAndResponse; let index = index">
     <app-message-bubble [message]="message" [index]="index"></app-message-bubble>
   </ng-container>
   <app-writing-bubble *ngIf="isLoading"></app-writing-bubble>
+</div>
+
+<div class="default-text" *ngIf="!allRequestAndResponse?.length">
+  <p>Aún no inicia una conversación</p>
 </div>
