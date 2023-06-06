@@ -1,7 +1,7 @@
 .bubble {
   max-width: 4rem;
   padding: 2rem 4rem;
-  border-radius: 1rem;
+  border-radius: 1rem 1rem 1rem 0;
   background-color: #e1e1e1;
   display: flex;
   justify-content: center;

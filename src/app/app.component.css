@@ -9,7 +9,7 @@
 
   background: linear-gradient(45deg,transparent 14%, #e7e5e5 15%, #e7e5e5 20%, transparent 21%, transparent 79%, #e7e5e5  80%, #e7e5e5 85%, transparent 86%),linear-gradient(135deg,transparent 14%, #e7e5e5 15%, #e7e5e5 20%, transparent 21%, transparent 79%, #e7e5e5  80%, #e7e5e5 85%, transparent 86%), radial-gradient(transparent 14%, #e7e5e5 15%, #e7e5e5 25%, transparent 26%);
   background-size: 7em 7em;
-  background-color: #f5f5f5;
+  background-color: #d2d2d2;
   opacity: 1;
 }
 
@@ -28,7 +28,7 @@
   margin: 0;
   background-color: rgba(255, 255, 255);
   border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.20) 0 1px 10px;
+  box-shadow: rgba(0, 0, 0, 0.50) 0 1px 10px;
 }
 
 @media (min-width: 768px) {
