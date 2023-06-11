@@ -8,7 +8,9 @@
         <div class="name">Chat SQL</div>
       </div>
       <div class="delete">
-<!--        <i class="fa-sharp fa-solid fa-trash"></i>-->
+       <button class="btn-delete" (click)="deleteHistory()" [disabled]="!allRequestAndResponse?.length">
+         <i class="fa-sharp fa-solid fa-trash"></i>
+       </button>
       </div>
     </div>
     <app-chats-box [isLoading]="isLoading"
@@ -17,13 +19,11 @@
     </app-chats-box>
     <div class="input-message">
 
-      <div class="app-input">
-        <div class="input-container" [formGroup]="myForm" *ngIf="myForm">
-          <input formControlName="text"
-                 (keyup.enter)="sendRequest()"
-                 type="text" placeholder="Ej: Crea una tabla llamada ..."
-          >
-        </div>
+      <div class="input-container" [formGroup]="myForm" *ngIf="myForm">
+        <input formControlName="text"
+               (keyup.enter)="sendRequest()"
+               type="text" placeholder="Ej: Crea una tabla llamada ..."
+        >
       </div>
 
       <button class="btn-send" (click)="sendRequest()" [disabled]="isLoading || !text?.valid">

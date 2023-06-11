@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MessagesRequest} from "../../../_core/_models/messages-request";
 
 @Component({
   selector: 'app-chats-box',
@@ -9,7 +8,7 @@ import {MessagesRequest} from "../../../_core/_models/messages-request";
 export class ChatsBoxComponent implements OnInit {
 
   @Input()
-  allRequestAndResponse?: string[];
+  allRequestAndResponse?: string[] | null;
 
   @Input()
   isLoading?: boolean;

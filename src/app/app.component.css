@@ -7,9 +7,7 @@
   justify-content: center;
   align-items: center;
 
-  background: linear-gradient(45deg,transparent 14%, #e7e5e5 15%, #e7e5e5 20%, transparent 21%, transparent 79%, #e7e5e5  80%, #e7e5e5 85%, transparent 86%),linear-gradient(135deg,transparent 14%, #e7e5e5 15%, #e7e5e5 20%, transparent 21%, transparent 79%, #e7e5e5  80%, #e7e5e5 85%, transparent 86%), radial-gradient(transparent 14%, #e7e5e5 15%, #e7e5e5 25%, transparent 26%);
-  background-size: 7em 7em;
-  background-color: #d2d2d2;
+  background-color: #91afaf;
   opacity: 1;
 }
 
@@ -17,8 +15,20 @@
   display: flex;
 }
 
-.delete {
+.btn-delete {
+  border: none;
+  background: transparent;
   cursor: pointer;
+}
+
+.btn-delete:hover {
+  color: rgba(196, 17, 17, 0.93);
+}
+
+.btn-delete:disabled,
+.btn-delete:disabled:hover {
+  color: #646464;
+  cursor: inherit;
 }
 
 .panel {
@@ -26,9 +36,9 @@
   max-width: 100%;
   height: 100%;
   margin: 0;
-  background-color: rgba(255, 255, 255);
+  background-color: #f5f5f5;
   border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.50) 0 1px 10px;
+  box-shadow: rgba(0, 0, 0, 0.40) 0 1px 50px;
 }
 
 @media (min-width: 768px) {
@@ -91,62 +101,7 @@
   font-size: 1.7rem;
 }
 
-.input-message {
-  width: 90%;
-  display: flex;
-  align-items: center;
-  margin: 2rem;
-}
-
 @media (min-width: 768px) {
-  .input-message {
-    width: 96%;
-  }
-}
-
-.app-input {
-  width: 80%;
-  min-width: 80%;
-  margin: 0;
-  padding: 0;
-  height: 4.4rem;
-}
-
-.btn-send {
-  cursor: pointer;
-  font-size: 1.6rem;
-  border: transparent;
-  border-radius:  0 10px 10px 0;
-  color: #000000;
-  width: 20%;
-  min-width: 20%;
-  margin: 0;
-  height: 4.4rem;
-  background-color: #dfdfe0;
-
-  transition: all .3s ease-out;
-}
-
-.btn-send:hover {
-  background-color: #43a3b6;
-  color: #FFFFFF;
-}
-
-.btn-send:disabled {
-  color: #000000;
-  background-color: #dfdfe0;
-}
-
-.btn-send:disabled:hover {
-  cursor: inherit;
-}
-
-@media (min-width: 768px) {
-  .app-input {
-    width: 90%;
-    min-width: 90%;
-  }
-
   .btn-send {
     width: 10%;
     min-width: 10%;
@@ -154,11 +109,6 @@
 }
 
 @media (min-width: 1020px) {
-  .app-input {
-    width: 95%;
-    min-width: 95%;
-  }
-
   .btn-send {
     width: 5%;
     min-width: 5%;
@@ -167,21 +117,55 @@
 
 /* Input */
 
+.input-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
 .input-container {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  height: 4.4rem;
+  min-width: 90%;
+  width: 90%;
+  max-width: 90%;
 }
 
 .input-container input {
   width: 100%;
   min-width: 100%;
-  border: solid rgba(0, 0, 0, 0.16) 1px;
+  border: solid rgba(0, 0, 0, 0.50) 1px;
   box-sizing: border-box;
   border-radius: 10px 0 0 10px;
   padding: 1rem 1rem;
+  max-width: 100%;
   font-size: 1.6rem;
   height: 4.4rem;
   font-family: var(--firstFont);
+  outline-color: #2f82b1;
+}
+
+.btn-send {
+  padding: 1.4rem;
+  border-radius: 0 1rem 1rem 0;
+  border: none;
+  background: #cecece;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.6rem;
+  transition: all ease-in .2s;
+}
+
+.btn-send:hover {
+  background-color: #2f82b1;
+  color: white;
+}
+
+.btn-send:disabled,
+.btn-send:disabled:hover {
+  cursor: inherit;
+  background-color: #646464;
+  color: white;
 }
