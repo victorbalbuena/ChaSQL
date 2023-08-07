@@ -8,7 +8,7 @@
         <div class="name">Chat SQL</div>
       </div>
       <div class="delete">
-       <button class="btn-delete" (click)="open()" [disabled]="!allRequestAndResponse?.length">
+       <button class="btn-delete" (click)="open()" *ngIf="allRequestAndResponse?.length">
          <i class="fa-sharp fa-solid fa-trash"></i>
        </button>
       </div>

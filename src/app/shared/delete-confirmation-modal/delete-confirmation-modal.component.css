@@ -11,8 +11,8 @@ section {
   right: 0;
   bottom: 0;
 
-  background: rgba(0, 0, 0, 0.2);
-  /*backdrop-filter: blur(2px);*/
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
   transition: opacity 250ms ease-in;
   z-index: 10;
 }
@@ -49,15 +49,31 @@ section > div {
 
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
+  font-size: 1.5rem;
 
   padding: 16px;
 }
 
+.modal-content {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .text {
-  font-family: Calibri;
+  font-family: var(--firstFont);
   font-size: 1.8rem;
   font-weight: 400;
+  text-align: center;
+
 }
 
 .btn {
@@ -76,20 +92,20 @@ section > div {
 
 .btn-accept {
   background-color: #1C70CC;
-  font-family: Calibri;
+  font-family: var(--firstFont);
+  transition: background-color .2s ease-in;
 }
 
 .btn-accept:hover {
-  background-color: #1860af;
-  font-family: Calibri;
+  background-color: #15569d;
 }
 
 .btn-cancel {
   background-color: #858484;
-  font-family: Calibri;
+  font-family: var(--firstFont);
+  transition: background-color .2s ease-in;
 }
 
 .btn-cancel:hover {
-  background-color: #6e6c6c;
-  font-family: Calibri;
+  background-color: #656363;
 }

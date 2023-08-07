@@ -4,13 +4,17 @@
     <div (click)="$event.stopPropagation()">
       <button class="close"
               type="button"
-              (click)="close()">&cross;</button>
+              (click)="close()">
+        <i class="fa-solid fa-x"></i>
+      </button>
 
-      <h2 class="text">¿Estás seguro de eliminar el historial de mensajes?</h2>
+      <div class="modal-content">
+        <h2 class="text">¿Estás seguro de eliminar el historial de mensajes?</h2>
 
-      <div class="buttons-container">
-        <button class="btn btn-accept" (click)="actAccept()">Aceptar</button>
-        <button class="btn btn-cancel" (click)="close()">Cancelar</button>
+        <div class="buttons-container">
+          <button class="btn btn-accept" (click)="actAccept()">Aceptar</button>
+          <button class="btn btn-cancel" (click)="close()">Cancelar</button>
+        </div>
       </div>
     </div>
   </section>
