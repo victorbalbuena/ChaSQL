@@ -1,0 +1,95 @@
+
+section {
+  visibility: hidden;
+  opacity: 0;
+
+  display: block;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: rgba(0, 0, 0, 0.2);
+  /*backdrop-filter: blur(2px);*/
+  transition: opacity 250ms ease-in;
+  z-index: 10;
+}
+
+.open {
+   visibility: inherit;
+   opacity: 1;
+ }
+
+section > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 200px;
+  width: 300px;
+
+  background: white;
+  padding: 64px;
+
+  border-radius: 8px;
+
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  padding: 16px;
+}
+
+.text {
+  font-family: Calibri;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.btn {
+  padding: 1rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: .5rem;
+
+  color: #FFFFFF;
+  font-size: 1.5rem;
+}
+
+.btn:first-child {
+  margin-right: 1rem;
+}
+
+.btn-accept {
+  background-color: #1C70CC;
+  font-family: Calibri;
+}
+
+.btn-accept:hover {
+  background-color: #1860af;
+  font-family: Calibri;
+}
+
+.btn-cancel {
+  background-color: #858484;
+  font-family: Calibri;
+}
+
+.btn-cancel:hover {
+  background-color: #6e6c6c;
+  font-family: Calibri;
+}

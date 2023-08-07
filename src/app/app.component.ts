@@ -7,6 +7,7 @@ import { MessagesRequest } from '../_core/_models/messages-request';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {LocalStorageService} from "./services/local-storage.service";
 import {Router} from "@angular/router";
+import {ModalService} from "./services/modal.service";
 
 @Component({
   selector: 'app-root',
@@ -30,7 +31,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(private openaiHttp: OpenaiService,
               private localService: LocalStorageService,
-              private router: Router) {
+              private router: Router,
+              private modalService: ModalService
+              ) {
     this.request = new Structure();
   }
 
@@ -86,6 +89,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subSink.unsubscribe();
+  }
+
+  open() {
+    this.modalService.open();
   }
 
 }

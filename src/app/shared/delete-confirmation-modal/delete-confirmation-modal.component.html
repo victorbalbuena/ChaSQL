@@ -1,0 +1,17 @@
+<ng-container *ngIf="display$ | async as display">
+  <section [class.open]="display === 'open'"
+           (click)="close()">
+    <div (click)="$event.stopPropagation()">
+      <button class="close"
+              type="button"
+              (click)="close()">&cross;</button>
+
+      <h2 class="text">¿Estás seguro de eliminar el historial de mensajes?</h2>
+
+      <div class="buttons-container">
+        <button class="btn btn-accept" (click)="actAccept()">Aceptar</button>
+        <button class="btn btn-cancel" (click)="close()">Cancelar</button>
+      </div>
+    </div>
+  </section>
+</ng-container>
